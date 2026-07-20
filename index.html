@@ -34,11 +34,30 @@
 
 <body style="font-family: 'Cairo', sans-serif;">
 
+    <!-- Pop Up Form -->
+    <div id="form-container" class="fixed inset-0 bg-black/20 hidden justify-center items-center px-5 py-8 z-[10000]">
+        <form id="form-child" class="w-full bg-white md:w-[700px] px-5 py-8 rounded-3xl flex flex-col gap-5">
+            <div class="border-b-2 pb-4 border-b-gray-300">
+                <button id="closeFormBtn" type="button" class="w-10 h-10 rounded bg-gray-50 cursor-pointer text-2xl text-red-500 hover:bg-red-500 hover:text-white hover:rotate-180 duration-300"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="flex flex-col gap-6">
+                <h3 class="bg-gradient-to-l from-indigo-500 text-center text-3xl font-bold to-purple-600 bg-clip-text text-transparent">
+                    دخل بياناتك هنا يا دكترة
+                </h3>
+                <input required type="text" class="border-2 border-gray-300 px-3 py-2 rounded-md text-2xl focus:outline-none font-semibold focus:border-indigo-500" placeholder="اسمك هنا يا دكترة" id="name-input">
+                <input required type="text" class="border-2 border-gray-300 px-3 py-2 text-black font-semibold rounded-md text-2xl" disabled placeholder="المرحلة الدراسية" id="level-input">
+                <select required id="grade-select" class="border-2 border-gray-300 px-3 py-2 rounded-md text-2xl focus:outline-none font-semibold focus:border-indigo-500"></select>
+                <input required type="text" class="border-2 border-gray-300 px-3 py-2 rounded-md text-2xl focus:outline-none font-semibold focus:border-indigo-500" placeholder="رقم موبايلك هنا يا دكترة" id="number-input">
+                <button type="submit" class="text-2xl font-semibold bg-gradient-to-r from-indigo-500 to-purple-600 hover:shadow-2xl hover:shadow-indigo-600 duration-300 cursor-pointer rounded-md py-3 text-white">احجز الآن</button>
+            </div>
+        </form>
+    </div>
+
     <!-- Start Hero Section -->
     <section class="w-full min-h-screen flex flex-col pt-10">
         <button id="scrollToTop" class="fixed bottom-5 right-5 w-11 h-11 shadow-2xl shadow-cyan-800 cursor-pointer z-50 translate-x-[100px] duration-300 text-white rounded-full flex justify-center items-center text-2xl bg-gradient-to-t from-sky-600 to-cyan-400"><i class="fa-solid fa-angle-up"></i></button>
         <nav id="nav"
-            class="flex fixed  justify-between items-center px-5 sm:px-10 py-4 z-50 sm:py-6 bg-white top-0 left-0 right-0">
+            class="flex fixed justify-between items-center px-5 sm:px-10 py-4 z-50 sm:py-6 bg-white top-0 left-0 right-0">
             <a href="#" class="flex items-center gap-2 text-xl sm:text-3xl font-bold hover:text-sky-600 duration-300">
                 <i class="fa-brands fa-react font-bold text-sky-500 text-4xl"></i>
                 <h2>الدكتور شادي</h2>
@@ -88,52 +107,56 @@
     <!-- Start Resons For Unique Section -->
     <section id="secret-section" class="min-h-screen w-full bg-gradient-to-t from-white to-sky-50 py-10 flex flex-col">
         <h3 class=" text-5xl font-bold text-center">سر <span class="text-sky-600">تميزنا</span></h3>
-        <div
-            class="py-20 px-5 md:px-8 lg:px-20 flex-1 content-center grid justify-center items-stretch gap-10 sm:gap-5 lg:gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-
-
-
-
+        
+        <div class="w-full flex flex-col">
+            
             <div
-                class="bg-white shadow-2xl hover:-translate-y-2 duration-300 rounded-3xl p-5 flex flex-col gap-5 justify-evenly items-center">
-                <div class="p-3 bg-cyan-50 text-sky-600 rounded text-2xl">
-                    <i class="fa-solid fa-brain animate-bounce"></i>
+                class="py-20 px-5 md:px-8 lg:px-20 flex-1 content-center grid justify-center items-stretch gap-10 sm:gap-5 lg:gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+                <div
+                    class="bg-white shadow-2xl hover:-translate-y-2 duration-300 rounded-3xl p-5 flex flex-col gap-5 justify-evenly items-center">
+                    <div class="p-3 bg-cyan-50 text-sky-600 rounded text-2xl">
+                        <i class="fa-solid fa-brain animate-bounce"></i>
+                    </div>
+                    <h4 class="text-sky-700 text-2xl font-bold">شرح واضح</h4>
+                    <p class="text-slate-800 text-xl font-semibold  ">نؤمن بأن الفهم هو أساس التفوق، لذلك نعتمد
+                        على شرح المفاهيم بطريقة مبسطة وعملية، بعيدًا عن الحفظ، حتى
+                        يتمكن الطالب من
+                        استيعاب المادة وتطبيقها بثقة.
+                    </p>
                 </div>
-                <h4 class="text-sky-700 text-2xl font-bold">شرح واضح</h4>
-                <p class="text-slate-800 text-xl font-semibold  ">نؤمن بأن الفهم هو أساس التفوق، لذلك نعتمد
-                    على شرح المفاهيم بطريقة مبسطة وعملية، بعيدًا عن الحفظ، حتى
-                    يتمكن الطالب من
-                    استيعاب المادة وتطبيقها بثقة.
-                </p>
-            </div>
-
-            <div
-                class="bg-white shadow-2xl hover:-translate-y-2 duration-300 rounded-3xl p-5 flex flex-col gap-5 justify-evenly items-center">
-                <div class="p-3 bg-sky-50 text-cyan-400 rounded text-2xl">
-                    <i class="fa-solid fa-clipboard-check animate-bounce"></i>
+            
+                <div
+                    class="bg-white shadow-2xl hover:-translate-y-2 duration-300 rounded-3xl p-5 flex flex-col gap-5 justify-evenly items-center">
+                    <div class="p-3 bg-sky-50 text-cyan-400 rounded text-2xl">
+                        <i class="fa-solid fa-clipboard-check animate-bounce"></i>
+                    </div>
+                    <h4 class="text-sky-700 text-2xl font-bold">تقييمات دورية</h4>
+                    <p class="text-slate-800 text-xl font-semibold  ">نؤمن بأن التقييم المستمر هو مفتاح التطور،
+                        لذلك نوفر اختبارات دورية تحاكي الامتحانات الفعلية لقياس مستوى الطالب، واكتشاف
+                        نقاط القوة والعمل على تحسين نقاط الضعف.
+                    </p>
                 </div>
-                <h4 class="text-sky-700 text-2xl font-bold">تقييمات دورية</h4>
-                <p class="text-slate-800 text-xl font-semibold  ">نؤمن بأن التقييم المستمر هو مفتاح التطور،
-                    لذلك نوفر اختبارات دورية تحاكي الامتحانات الفعلية لقياس مستوى الطالب، واكتشاف
-                    نقاط القوة والعمل على تحسين نقاط الضعف.
-                </p>
-            </div>
-
-            <div
-                class="bg-white shadow-2xl hover:-translate-y-2 duration-300 rounded-3xl p-5 flex flex-col gap-5 justify-evenly items-center">
-                <div class="p-3 bg-green-50 text-emerald-700 rounded text-2xl">
-                    <i class="fa-solid fa-user-graduate animate-bounce"></i>
+            
+                <div
+                    class="bg-white shadow-2xl hover:-translate-y-2 duration-300 rounded-3xl p-5 flex flex-col gap-5 justify-evenly items-center">
+                    <div class="p-3 bg-green-50 text-emerald-700 rounded text-2xl">
+                        <i class="fa-solid fa-user-graduate animate-bounce"></i>
+                    </div>
+                    <h4 class="text-sky-700 text-2xl font-bold">متابعة مستمرة</h4>
+                    <p class="text-slate-800 text-xl font-semibold  ">
+                        رحلة الطالب لا تنتهي بانتهاء الحصة، لذلك نوفر متابعة مستمرة للإجابة عن الاستفسارات، ومراجعة مستوى
+                        التقدم، وتقديم الدعم
+                        اللازم لضمان تحقيق أفضل النتائج.
+                    </p>
                 </div>
-                <h4 class="text-sky-700 text-2xl font-bold">متابعة مستمرة</h4>
-                <p class="text-slate-800 text-xl font-semibold  ">
-                    رحلة الطالب لا تنتهي بانتهاء الحصة، لذلك نوفر متابعة مستمرة للإجابة عن الاستفسارات، ومراجعة مستوى
-                    التقدم، وتقديم الدعم
-                    اللازم لضمان تحقيق أفضل النتائج.
-                </p>
+            
             </div>
-
-
+            <div class="mx-5 md:mx-8 lg:mx-20 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl px-2 sm:px-5 py-5 text-white text-xl sm:text-3xl font-bold flex items-center  gap-3  lg:gap-5 ">
+                <span>✨</span>
+                <p class="">غير كدا تخيل معايا لو المدرس في الاصل دكتور الشرح هيكون عامل ازاي 😂</p>
+            </div>
         </div>
+
     </section>
 
     <!-- Start Booking Section -->
@@ -153,7 +176,7 @@
                     <p>📝 تقييم أسبوعي (أونلاين وأوفلاين)</p>
                     <p>💬 متابعة مستمرة خلال الأيام الأخرى</p>
                 </div>
-                <button class="self-stretch mx-2 sm:mx-0 text-2xl font-semibold bg-gradient-to-r from-indigo-500 to-purple-600 hover:scale-[1.02] hover:shadow-2xl hover:shadow-indigo-600 duration-300 cursor-pointer rounded-full py-3 text-white">احجز الان</button>
+                <button class="self-stretch mx-2 sm:mx-0 text-2xl font-semibold bg-gradient-to-r from-indigo-500 to-purple-600 hover:scale-[1.02] hover:shadow-2xl hover:shadow-indigo-600 duration-300 cursor-pointer rounded-full py-3 text-white book-btn" data-level="المرحلة الإبتدائية">احجز الان</button>
             </div>
             <div class="py-8 px-5 sm:px-8 rounded-2xl shadow-2xl shadow-sky-600 bg-white flex flex-col gap-10 justify-evenly items-center">
                 <h4 class="text-sky-700 text-2xl md:text-3xl font-bold">المرحلة الإعدادية</h4>
@@ -167,7 +190,7 @@
                     <p>💬 متابعة مستمرة خلال الأيام الأخرى</p>
                     <p>🗂️ حل وتحليل امتحانات الأعوام السابقة</p>
                 </div>
-                <button class="self-stretch mx-2 sm:mx-0 text-2xl font-semibold bg-gradient-to-r from-indigo-500 to-purple-600 hover:scale-[1.02] hover:shadow-2xl hover:shadow-indigo-600 duration-300 cursor-pointer rounded-full py-3 text-white">احجز الان</button>
+                <button class="self-stretch mx-2 sm:mx-0 text-2xl font-semibold bg-gradient-to-r from-indigo-500 to-purple-600 hover:scale-[1.02] hover:shadow-2xl hover:shadow-indigo-600 duration-300 cursor-pointer rounded-full py-3 text-white book-btn " data-level="المرحلة الإعدادية">احجز الان</button>
             </div>
         </div>
 
