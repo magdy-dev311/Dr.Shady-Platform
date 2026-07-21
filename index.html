@@ -53,9 +53,11 @@
         </form>
     </div>
 
+    <!-- Scroll To Top Btn -->
+    <button id="scrollToTop" class="fixed bottom-5 right-5 w-11 h-11 shadow-2xl shadow-cyan-800 cursor-pointer z-50 translate-x-[100px] duration-300 text-white rounded-full flex justify-center items-center text-2xl bg-gradient-to-t from-sky-600 to-cyan-400"><i class="fa-solid fa-angle-up"></i></button>
+
     <!-- Start Hero Section -->
     <section class="w-full min-h-screen flex flex-col pt-10">
-        <button id="scrollToTop" class="fixed bottom-5 right-5 w-11 h-11 shadow-2xl shadow-cyan-800 cursor-pointer z-50 translate-x-[100px] duration-300 text-white rounded-full flex justify-center items-center text-2xl bg-gradient-to-t from-sky-600 to-cyan-400"><i class="fa-solid fa-angle-up"></i></button>
         <nav id="nav"
             class="flex fixed justify-between items-center px-5 sm:px-10 py-4 z-50 sm:py-6 bg-white top-0 left-0 right-0">
             <a href="#" class="flex items-center gap-2 text-xl sm:text-3xl font-bold hover:text-sky-600 duration-300">
@@ -70,7 +72,7 @@
                 <li><a class="text-slate-700 hover:text-sky-600 transition-all duration-300 relative after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:h-[3px] after:w-0 after:rounded-full after:bg-sky-600 after:duration-300 hover:after:w-full"
                         href="#booking">الحجز</a></li>
                 <li><a class="text-slate-700 hover:text-sky-600 transition-all duration-300 relative after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:h-[3px] after:w-0 after:rounded-full after:bg-sky-600 after:duration-300 hover:after:w-full"
-                        href="#">إنجازتنا</a></li>
+                        href="#achievements">إنجازتنا</a></li>
                 <li><a class="text-slate-700 hover:text-sky-600 transition-all duration-300 relative after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:h-[3px] after:w-0 after:rounded-full after:bg-sky-600 after:duration-300 hover:after:w-full"
                         href="#">تواصل معنا</a></li>
             </ul>
@@ -82,7 +84,7 @@
                 <li><a class="hover:text-sky-600 duration-300" href="#">الرئيسية</a></li>
                 <li><a class="hover:text-sky-600 duration-300" href="#secret-section">سر تميزنا</a></li>
                 <li><a class="hover:text-sky-600 duration-300" href="#booking">الحجز</a></li>
-                <li><a class="hover:text-sky-600 duration-300" href="#">إنجازتنا</a></li>
+                <li><a class="hover:text-sky-600 duration-300" href="#achievements">إنجازتنا</a></li>
                 <li><a class="hover:text-sky-600 duration-300" href="#">تواصل معنا</a></li>
             </ul>
         </nav>
@@ -167,7 +169,7 @@
         <div class="flex-1  grid content-center pt-20 px-5 sm:px-10 md:px-22 lg:px-24 gap-8 grid-cols-1 lg:grid-cols-2 ">
             <div class="py-8 px-5 sm:px-8 rounded-2xl shadow-2xl shadow-sky-600 bg-white flex flex-col gap-10 justify-evenly items-center">
                 <h4 class="text-sky-700 text-2xl md:text-3xl font-bold">المرحلة الإبتدائية</h4>
-                <div  class="self-stretch text-lg  sm:text-xl font-semibold flex flex-col gap-5 text-slate-800">
+                <div  class="self-stretch text-lg flex-1 sm:text-xl font-semibold flex flex-col gap-5 text-slate-800">
                     <p>📖 شرح مبسط يناسب جميع المستويات.</p>
                     <p>📱 جروب متابعة على واتساب</p>
                     <p>📚 ملخصات ومذكرات</p>
@@ -180,7 +182,7 @@
             </div>
             <div class="py-8 px-5 sm:px-8 rounded-2xl shadow-2xl shadow-sky-600 bg-white flex flex-col gap-10 justify-evenly items-center">
                 <h4 class="text-sky-700 text-2xl md:text-3xl font-bold">المرحلة الإعدادية</h4>
-                <div class="self-stretch text-lg  sm:text-xl font-semibold flex flex-col gap-5 text-slate-800">
+                <div class="self-stretch flex-1 text-lg  sm:text-xl font-semibold flex flex-col gap-5 text-slate-800">
                     <p>📖 شرح مبسط يناسب جميع المستويات.</p>
                     <p>📱 جروب متابعة على واتساب</p>
                     <p>📚 ملخصات ومذكرات</p>
@@ -193,8 +195,30 @@
                 <button class="self-stretch mx-2 sm:mx-0 text-2xl font-semibold bg-gradient-to-r from-indigo-500 to-purple-600 hover:scale-[1.02] hover:shadow-2xl hover:shadow-indigo-600 duration-300 cursor-pointer rounded-full py-3 text-white book-btn " data-level="المرحلة الإعدادية">احجز الان</button>
             </div>
         </div>
-
     </section>
+
+    <!-- start achievements section -->
+    <section id="achievements" class=" w-full flex flex-col gap-20 py-10 my-10">
+        <h3 class=" text-5xl font-bold text-center"><span class="text-sky-600">إنجازتنا</span></h3>
+        <div class="flex-1 grid grid-cols-1 content-center ">
+            <div id="countersContainer" class="bg-[#003c90] text-white text-3xl md:text-4xl py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-y-25 px-16 gap-40 md:gap-6">
+                <div class="flex flex-col justify-center items-center gap-2 font-bold ">
+                    <p class="animate-bounce text-teal-300"><span class="counterElement" data-target="2">0</span>+</p>
+                    <span>سنوات الخبرة</span>
+                </div>
+                <div class="flex flex-col justify-center items-center gap-2 font-bold ">
+                    <p class="animate-bounce text-teal-300"><span class="counterElement" data-target="98">0</span>%</p>
+                    <span>نسبة النجاح</span>
+                </div>
+                <div class="flex flex-col justify-center items-center gap-2 font-bold ">
+                    <p class="animate-bounce text-teal-300"><span class="counterElement" data-target="200">0</span>+</p>
+                    <span>طالب</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
 
     <script src="script.js"></script>
 </body>

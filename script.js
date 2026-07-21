@@ -14,6 +14,10 @@ let levelInput = document.getElementById("level-input")
 let gradeSelect = document.getElementById("grade-select")
 let numberInput = document.getElementById("number-input")
 
+let counterElements = Array.from(document.querySelectorAll(".counterElement"))
+let countersContainer = document.getElementById("countersContainer")
+let isStartCount = false
+
 let userData = {}
 
 menuBtn.addEventListener("click", () => {
@@ -49,6 +53,14 @@ window.onscroll = () => {
         scrollToTopBtn.classList.remove("translate-x-0")
         scrollToTopBtn.classList.add("translate-x-[100px]")
     }
+
+    if (scrollY + innerHeight >= countersContainer.offsetTop) {
+        if (!isStartCount) {
+            counterElements.forEach(el => startCount(el))
+            isStartCount = true
+        }
+    }
+
 }
 
 scrollToTopBtn.addEventListener("click", () => {
@@ -74,8 +86,8 @@ bookingBtns.forEach((btn) => {
             for (let i = 0; i < allYears.length; i++) {
                 gradeSelect.innerHTML += `<option>${allYears[i]}</option>`
             }
-        }else{
-            for (let i = 0; i < 3 ; i++) {
+        } else {
+            for (let i = 0; i < 3; i++) {
                 gradeSelect.innerHTML += `<option>${allYears[i]}</option>`
             }
         }
@@ -127,3 +139,16 @@ formChild.addEventListener("submit", (e) => {
     formContainer.classList.remove("flex")
     formContainer.classList.add("hidden")
 })
+
+
+function startCount(el) {
+    let target = el.dataset.target
+
+    let interval = setInterval(() => {
+        el.textContent++
+        if (el.textContent == target) {
+            clearInterval(interval)
+        }
+    }, 2000 / target)
+
+}
